@@ -93,17 +93,17 @@ if (isset($_GET['id'])) {
     </header>
     <main>
         <article class="registration">
-            <h1>書籍登録</h1>
+            <h1>書籍編集</h1>
             <div class="back">
                 <a href="read.php" class="btn">&lt; 戻る</a>
             </div>
-            <form action="create.php" method="post" class="registration-form">
+            <form action="update.php?id=<?= $_GET['id'] ?>" method="post" class="registration-form">
                 <div>
                     <label for="book_code">書籍コード</label>
-                    <input type="number" id="product_code" name="product_code" value="<?= $book['book_code'] ?>" min="0" max="100000000" required>
+                    <input type="number" id="product_code" name="book_code" value="<?= $book['book_code'] ?>" min="0" max="100000000" required>
 
                     <label for="book_name">書籍名</label>
-                    <input type="text" id="product_name" name="product_name" value="<?= $book['book_name'] ?>" maxlength="50" required>
+                    <input type="text" id="product_name" name="book_name" value="<?= $book['book_name'] ?>" maxlength="50" required>
  
                     <label for="price">単価</label>
                     <input type="number" id="price" name="price" min="0" value="<?= $book['price'] ?>" max="100000000" required>
@@ -125,7 +125,7 @@ if (isset($_GET['id'])) {
                         ?>
                     </select>
                 </div>
-                <button type="submit" class="submit-btn" name="submit" value="create">登録</button>
+                <button type="submit" class="submit-btn" name="submit" value="create">更新</button>
             </form>
         </article>
     </main>
